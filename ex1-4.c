@@ -1,25 +1,25 @@
 #include <stdio.h>
 
-/* Print Fahrenheit-Celsius table for
-        fahr =0, 20, ..., 300 */
+/* Print Celsius-Fahrnheit table for
+        Celsius=-40, -20, ... 120 */
 
 int main()
 {
     float fahr, celsius;
     int lower, upper,  step;
 
-    lower   = 0;        /* lower limit of temperature table */
-    upper   = 300;      /* upper liimit of temperature table */
-    step    = 20;       /* step size */
+    lower   = -40;        /* lower limit of temperature table */
+    upper   = 120;      /* upper liimit of temperature table */
+    step    = 10;       /* step size */
 
-    printf("Fahrenheit\tCelsius\n");
+    printf("Celsius\t\tFahrenheit\n");
     printf("------------------------\n");
-    fahr = lower;
-    while (fahr <= upper)
+    celsius = lower;
+    while (celsius <= upper)
     {
-        celsius = (5.0/9.0) * (fahr - 32.0);
-        printf("%3.0f\t\t%6.1f\n", fahr, celsius);
-        fahr = fahr + step;
+        fahr = 1.8 * celsius + 32.0;
+        printf("%3.0f\t\t%6.1f\n", celsius, fahr);
+        celsius += step;
     }
     return 0;
 }
